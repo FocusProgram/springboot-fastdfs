@@ -89,62 +89,95 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
 
+
+            <!--            docker打包-->
             <plugin>
                 <groupId>com.spotify</groupId>
-                <artifactId>dockerfile-maven-plugin</artifactId>
-                <version>${dockerfile-maven-plugin.version}</version>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>1.2.0</version>
                 <executions>
-                    <!--
-                     Uncomment the section below to build the docker image with mvn package and and push it with mvn deploy
                     <execution>
-                        <id>default</id>
+                        <id>build-image</id>
+                        <phase>package</phase>
                         <goals>
                             <goal>build</goal>
-                            <goal>push</goal>
                         </goals>
-                    </execution>
-                    -->
-                    <execution>
-                        <id>tag-latest</id>
-                        <phase>none</phase>
-                        <goals>
-                            <goal>build</goal>
-                            <goal>tag</goal>
-                            <goal>push</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>version</id>
-                        <phase>none</phase>
-                        <goals>
-                            <goal>build</goal>
-                            <goal>tag</goal>
-                            <goal>push</goal>
-                        </goals>
-                        <configuration>
-                            <tag>${project.version}</tag>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>commit</id>
-                        <phase>none</phase>
-                        <goals>
-                            <goal>build</goal>
-                            <goal>tag</goal>
-                            <goal>push</goal>
-                        </goals>
-                        <configuration>
-                            <tag>${git.commit.id.describe}</tag>
-                        </configuration>
                     </execution>
                 </executions>
                 <configuration>
-<!--                    <repository>${docker.image.prefix}/${project.artifactId}</repository>-->
-<!--                    <contextDirectory>${project.build.directory}</contextDirectory>-->
-                    <repository>springboot-fastdfs</repository>
-                    <contextDirectory>src/main/docker</contextDirectory>
+<!--                    <dockerHost>http://192.168.80.130:2375</dockerHost> &lt;!&ndash;docker地址&ndash;&gt;-->
+                    <imageName>${docker.image.prefix}/${project.artifactId}</imageName> <!--镜像名只能是小写，此处为dockerdemo/dockerdemo-->
+                    <!--                    <imageTags>-->
+                    <!--                        <imageTag>${project.version}</imageTag>-->
+                    <!--                    </imageTags>-->
+                    <!--                    <forceTags>true</forceTags>-->
+                    <dockerDirectory>src/main/docker</dockerDirectory> <!--Dockerfile的位置-->
+                    <resources>
+                        <resource>
+                            <targetPath>/</targetPath>
+                            <directory>${project.build.directory}</directory>
+                            <include>${project.build.finalName}.jar</include>
+                        </resource>
+                    </resources>
                 </configuration>
             </plugin>
+
+<!--            <plugin>-->
+<!--                <groupId>com.spotify</groupId>-->
+<!--                <artifactId>dockerfile-maven-plugin</artifactId>-->
+<!--                <version>${dockerfile-maven-plugin.version}</version>-->
+<!--                <executions>-->
+<!--                    &lt;!&ndash;-->
+<!--                     Uncomment the section below to build the docker image with mvn package and and push it with mvn deploy-->
+<!--                    <execution>-->
+<!--                        <id>default</id>-->
+<!--                        <goals>-->
+<!--                            <goal>build</goal>-->
+<!--                            <goal>push</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                    &ndash;&gt;-->
+<!--                    <execution>-->
+<!--                        <id>tag-latest</id>-->
+<!--                        <phase>none</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>build</goal>-->
+<!--                            <goal>tag</goal>-->
+<!--                            <goal>push</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                    <execution>-->
+<!--                        <id>version</id>-->
+<!--                        <phase>none</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>build</goal>-->
+<!--                            <goal>tag</goal>-->
+<!--                            <goal>push</goal>-->
+<!--                        </goals>-->
+<!--                        <configuration>-->
+<!--                            <tag>${project.version}</tag>-->
+<!--                        </configuration>-->
+<!--                    </execution>-->
+<!--                    <execution>-->
+<!--                        <id>commit</id>-->
+<!--                        <phase>none</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>build</goal>-->
+<!--                            <goal>tag</goal>-->
+<!--                            <goal>push</goal>-->
+<!--                        </goals>-->
+<!--                        <configuration>-->
+<!--                            <tag>${git.commit.id.describe}</tag>-->
+<!--                        </configuration>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--                <configuration>-->
+<!--&lt;!&ndash;                    <repository>${docker.image.prefix}/${project.artifactId}</repository>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <contextDirectory>${project.build.directory}</contextDirectory>&ndash;&gt;-->
+<!--                    <repository>springboot-fastdfs</repository>-->
+<!--                    <contextDirectory>src/main/docker</contextDirectory>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
         </plugins>
 
 

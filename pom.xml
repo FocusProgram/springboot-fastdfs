@@ -139,8 +139,10 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <repository>${docker.image.prefix}/${project.artifactId}</repository>
-                    <contextDirectory>${project.build.directory}</contextDirectory>
+<!--                    <repository>${docker.image.prefix}/${project.artifactId}</repository>-->
+<!--                    <contextDirectory>${project.build.directory}</contextDirectory>-->
+                    <repository>springboot-fastdfs</repository>
+                    <contextDirectory>src/main/docker</contextDirectory>
                 </configuration>
             </plugin>
         </plugins>

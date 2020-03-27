@@ -126,56 +126,55 @@
                 <groupId>com.spotify</groupId>
                 <artifactId>dockerfile-maven-plugin</artifactId>
                 <version>${dockerfile-maven-plugin.version}</version>
-                <executions>
-                    <!--
-                     Uncomment the section below to build the docker image with mvn package and and push it with mvn deploy
-                    <execution>
-                        <id>default</id>
-                        <goals>
-                            <goal>build</goal>
-                            <goal>push</goal>
-                        </goals>
-                    </execution>
-                    -->
-                    <execution>
-                        <id>tag-latest</id>
-                        <phase>none</phase>
-                        <goals>
-                            <goal>build</goal>
-                            <goal>tag</goal>
-                            <goal>push</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>version</id>
-                        <phase>none</phase>
-                        <goals>
-                            <goal>build</goal>
-                            <goal>tag</goal>
-                            <goal>push</goal>
-                        </goals>
-                        <configuration>
-                            <tag>${project.version}</tag>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>commit</id>
-                        <phase>none</phase>
-                        <goals>
-                            <goal>build</goal>
-                            <goal>tag</goal>
-                            <goal>push</goal>
-                        </goals>
-                        <configuration>
-                            <tag>${git.commit.id.describe}</tag>
-                        </configuration>
-                    </execution>
-                </executions>
+<!--                <executions>-->
+<!--                    &lt;!&ndash;-->
+<!--                     Uncomment the section below to build the docker image with mvn package and and push it with mvn deploy-->
+<!--                    <execution>-->
+<!--                        <id>default</id>-->
+<!--                        <goals>-->
+<!--                            <goal>build</goal>-->
+<!--                            <goal>push</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                    &ndash;&gt;-->
+<!--                    <execution>-->
+<!--                        <id>tag-latest</id>-->
+<!--                        <phase>none</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>build</goal>-->
+<!--                            <goal>tag</goal>-->
+<!--                            <goal>push</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                    <execution>-->
+<!--                        <id>version</id>-->
+<!--                        <phase>none</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>build</goal>-->
+<!--                            <goal>tag</goal>-->
+<!--                            <goal>push</goal>-->
+<!--                        </goals>-->
+<!--                        <configuration>-->
+<!--                            <tag>${project.version}</tag>-->
+<!--                        </configuration>-->
+<!--                    </execution>-->
+<!--                    <execution>-->
+<!--                        <id>commit</id>-->
+<!--                        <phase>none</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>build</goal>-->
+<!--                            <goal>tag</goal>-->
+<!--                            <goal>push</goal>-->
+<!--                        </goals>-->
+<!--                        <configuration>-->
+<!--                            <tag>${git.commit.id.describe}</tag>-->
+<!--                        </configuration>-->
+<!--                    </execution>-->
+<!--                </executions>-->
                 <configuration>
-<!--                    <repository>${docker.image.prefix}/${project.artifactId}</repository>-->
+                    <repository>${docker.image.prefix}/${project.artifactId}</repository>
 <!--                    <contextDirectory>${project.build.directory}</contextDirectory>-->
-                    <repository>springboot-fastdfs</repository>
-                    <contextDirectory>src/main/docker</contextDirectory>
+<!--                    <contextDirectory>src/main/docker</contextDirectory>-->
                 </configuration>
             </plugin>
         </plugins>

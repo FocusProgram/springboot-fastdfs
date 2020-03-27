@@ -13,6 +13,7 @@
     <artifactId>springboot-fastdfs</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>springboot-fastdfs</name>
+    <packaging>jar</packaging>
     <description>springboot-fastdfs</description>
 
     <properties>

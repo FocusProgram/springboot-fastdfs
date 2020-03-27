@@ -140,7 +140,7 @@
                 </executions>
                 <configuration>
                     <repository>${docker.image.prefix}/${project.artifactId}</repository>
-                    <contextDirectory>src/main/docker</contextDirectory>
+                    <contextDirectory>${project.build.directory}</contextDirectory>
                 </configuration>
             </plugin>
         </plugins>

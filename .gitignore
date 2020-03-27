@@ -6,3 +6,4 @@ rebel.xml
 rebel-remote.xml
 .mvn
 target
+.gitignore

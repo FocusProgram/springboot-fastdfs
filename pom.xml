@@ -175,6 +175,9 @@
                     <repository>${docker.image.prefix}/${project.artifactId}</repository>
 <!--                    <contextDirectory>${project.build.directory}</contextDirectory>-->
                     <contextDirectory>src/main/docker</contextDirectory>
+                    <buildArgs>
+                        <JAR_FILE>target/springboot-fastdfs-0.0.1-SNAPSHOT.jar</JAR_FILE>
+                    </buildArgs>
                 </configuration>
             </plugin>
         </plugins>

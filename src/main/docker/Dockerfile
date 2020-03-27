@@ -1,6 +1,6 @@
 #基础镜像，运行环境
 # 打包docker镜像出现无法初始化servlet
-FROM openjdk:8-jdk-alpine
+FROM openjdk:8-jre-alpine
 
 #FROM java:8
 

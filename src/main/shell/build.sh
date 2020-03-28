@@ -22,7 +22,7 @@ cd $workDir;
 
 git pull;
 
-cp $workDir/src/main/docker/Dockerfile . ;
+cp $workDir/src/main/docker/{Dockerfile,entrypoint.sh,.dockerignore} . ;
 
 mvn clean install dockerfile:build;
 

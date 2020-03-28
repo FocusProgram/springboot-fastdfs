@@ -137,8 +137,8 @@
 <!--                </executions>-->
                 <configuration>
                     <repository>spotify/foobar</repository>
-                    <contextDirectory>${project.name}</contextDirectory>
-                    <dockerDirectory>src/main/docker/Dockerfile</dockerDirectory>
+                    <contextDirectory>/src/main/Dockerfile</contextDirectory>
+                    <dockerfileDirectory>src/main/docker/Dockerfile</dockerfileDirectory>
                     <tag>${project.version}</tag>
                     <buildArgs>
                         <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>

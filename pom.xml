@@ -122,35 +122,38 @@
             <!--                </configuration>-->
             <!--            </plugin>-->
 
+            <!--Dockerfile打包-->
             <plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>dockerfile-maven-plugin</artifactId>
                 <version>${dockerfile-maven-plugin.version}</version>
-<!--                <executions>-->
-<!--                    <execution>-->
-<!--                        <id>default</id>-->
-<!--                        <goals>-->
-<!--                            <goal>build</goal>-->
-<!--                            <goal>push</goal>-->
-<!--                        </goals>-->
-<!--                    </execution>-->
-<!--                </executions>-->
+                <!--执行mvn clean install默认docker打包-->
+                <!--                <executions>-->
+                <!--                    <execution>-->
+                <!--                        <id>default</id>-->
+                <!--                        <goals>-->
+                <!--                            <goal>build</goal>-->
+                <!--                            <goal>push</goal>-->
+                <!--                        </goals>-->
+                <!--                    </execution>-->
+                <!--                </executions>-->
                 <configuration>
-                    <repository>spotify/foobar</repository>
+                    <!--                    &lt;!&ndash;使用maven setting认证&ndash;&gt;-->
+                    <!--                    <useMavenSettingsForAuth>true</useMavenSettingsForAuth>-->
+                    <!--                    &lt;!&ndash;子用户名@企业别名 或 子用户名@主账号UID&ndash;&gt;-->
+                    <!--                    <username>镜像仓库用户名</username>-->
+                    <!--                    &lt;!&ndash;在容器镜像服务控制台"设置Registry登陆密码"&ndash;&gt;-->
+                    <!--                    <password>镜像仓库密码</password>-->
+                    <!--                    &lt;!&ndash;上传的仓库路径 registry.cn-hangzhou.aliyuncs.com/namespace/repositoryname&ndash;&gt;-->
+                    <repository>${docker.image.prefix}/${project.artifactId}</repository>
+                    <!-- 上下文路径配置，此处设置为项目根路径 用来读取Dockerfile-->
                     <contextDirectory>${project.basedir}</contextDirectory>
+                    <!-- 标记 -->
                     <tag>${project.version}</tag>
+                    <!--作为Dockerfile文件参数传入-->
                     <buildArgs>
-                        <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
                         <ARTIFACT>target/${project.build.finalName}.${project.packaging}</ARTIFACT>
                     </buildArgs>
-                    <resources>
-                        <resource>
-                            <targetPath>/</targetPath>
-                            <directory>${project.build.directory}</directory>
-                            <include>${project.build.finalName}.jar</include>
-                        </resource>
-                    </resources>
-
                 </configuration>
             </plugin>
         </plugins>

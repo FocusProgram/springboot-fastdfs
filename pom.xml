@@ -142,6 +142,13 @@
                     <buildArgs>
                         <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
                     </buildArgs>
+                    <resources>
+                        <resource>
+                            <targetPath>/</targetPath>
+                            <directory>${project.build.directory}</directory>
+                            <include>${project.build.finalName}.jar</include>
+                        </resource>
+                    </resources>
                     <buildArgs>
                         <ARTIFACT>target/${project.build.finalName}.${project.packaging}</ARTIFACT>
                     </buildArgs>

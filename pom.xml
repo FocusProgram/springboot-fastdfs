@@ -142,6 +142,9 @@
                     <buildArgs>
                         <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
                     </buildArgs>
+                    <buildArgs>
+                        <ARTIFACT>${project.build.directory}/${project.build.finalName}.${project.packaging}</ARTIFACT>
+                    </buildArgs>
                 </configuration>
             </plugin>
         </plugins>

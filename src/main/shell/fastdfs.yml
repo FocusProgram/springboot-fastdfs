@@ -1,0 +1,17 @@
+version: '2'
+services:
+      web:
+        image: com.fastdfs/springboot-fastdfs:0.0.1-SNAPSHOT
+        hostname: fastdfs
+        ports:
+            - 8000:8000
+        #env_file: ./common.env
+        #extends:
+        #  file: common.yml
+        #  service: common
+
+#networks:
+#  default:
+#    external:
+#      name: tx_sit
+

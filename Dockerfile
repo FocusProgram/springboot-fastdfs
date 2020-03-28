@@ -4,7 +4,7 @@ FROM openjdk:8-jre-alpine
 
 ENV SPRING_OUTPUT_ANSI_ENABLED=ALWAYS \
     KONGQI_SLEEP=0 \
-    JAVA_OPTS =""
+    JAVA_OPTS=""
 
 # 维护者
 MAINTAINER Mr.Kong@by 1031652818@qq.com

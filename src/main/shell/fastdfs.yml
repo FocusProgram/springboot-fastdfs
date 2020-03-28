@@ -3,6 +3,7 @@ services:
       web:
         image: com.fastdfs/springboot-fastdfs:0.0.1-SNAPSHOT
         hostname: fastdfs
+        container_name: fastdfs
         ports:
             - 8000:8000
         #env_file: ./common.env

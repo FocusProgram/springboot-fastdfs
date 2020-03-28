@@ -11,7 +11,7 @@
 
     <groupId>com.fastdfs</groupId>
     <artifactId>springboot-fastdfs</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.1-SNAPSHOT</version>
     <name>springboot-fastdfs</name>
     <packaging>jar</packaging>
     <description>springboot-fastdfs</description>
@@ -137,7 +137,7 @@
 <!--                </executions>-->
                 <configuration>
                     <repository>spotify/foobar</repository>
-                    <contextDirectory>${project.build.directory}</contextDirectory>
+                    <contextDirectory>${project.basedir}</contextDirectory>
                     <tag>${project.version}</tag>
                     <buildArgs>
                         <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>

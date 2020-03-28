@@ -57,6 +57,11 @@ public class UploadController {
         return ResponseEntity.ok(ResultUtil.success(result));
     }
 
+    @GetMapping("test")
+    public String test(){
+        return "test docker";
+    }
+
     @PostMapping("upload")
     public ResponseEntity<Result<Map<String, Object>>> upload(@RequestParam("storePath") int storePath, MultipartFile multipartFile, HttpServletRequest request) throws IOException {
         Map<String, Object> result = new HashMap<String, Object>();

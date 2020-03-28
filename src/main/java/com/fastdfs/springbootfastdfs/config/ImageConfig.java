@@ -17,6 +17,7 @@ public class ImageConfig {
     public MultipartResolver multipartResolver() {
         CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();
         multipartResolver.setMaxUploadSize(100 * 1024 * 1024);
+        multipartResolver.setMaxInMemorySize(4096000);
         multipartResolver.setDefaultEncoding("UTF-8");
         return multipartResolver;
     }

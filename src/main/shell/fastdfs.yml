@@ -1,7 +1,7 @@
 version: '2'
 services:
       web:
-        image: com.fastdfs/springboot-fastdfs:0.0.1-SNAPSHOT
+        image: com.fastdfs/springboot-fastdfs
         hostname: fastdfs
         container_name: fastdfs
         ports:

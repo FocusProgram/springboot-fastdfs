@@ -137,7 +137,7 @@
 <!--                </executions>-->
                 <configuration>
                     <repository>spotify/foobar</repository>
-                    <contextDirectory>src/main/Dockerfile</contextDirectory>
+                    <contextDirectory>src/main/docker</contextDirectory>
                     <dockerfileDirectory>src/main/docker/Dockerfile</dockerfileDirectory>
                     <tag>${project.version}</tag>
                     <buildArgs>

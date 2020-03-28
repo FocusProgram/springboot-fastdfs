@@ -28,4 +28,4 @@ mvn clean install dockerfile:build;
 
 echo "----->dockerfile:build success";
 
-rm -rf Dockerfile;
+rm -rf Dockerfile entrypoint.sh .dockerignore;

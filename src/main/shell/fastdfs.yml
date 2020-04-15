@@ -6,6 +6,7 @@ services:
         container_name: fastdfs
         ports:
             - 8000:8000
+        network_mode: bridge  # 连接外部容器
         #env_file: ./common.env
         #extends:
         #  file: common.yml

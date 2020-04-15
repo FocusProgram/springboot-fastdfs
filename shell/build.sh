@@ -14,7 +14,7 @@ fi
 #ls -F $projectsDir| grep '/$'|grep tx|grep -E $sp 
 #for updatedir in $(ls -F $projectsDir| grep '/$'|grep tx|grep -E $sp) ;do cd $projectsDir;echo "updatedir--->"$updatedir;pwd;cd $updatedir; pwd;git pull;mvn clean install;if [ -z `echo $updatedir|grep common` ] ;then pwd ;webdir=`ls -d ./*|grep web`;echo $webdir;cd $webdir;mvn dockerfile:build; fi;done
 
-workDir=/data/fastdfs;
+workDir=/data/springboot-fastdfs;
 
 echo "----->cd "$workDir;
 

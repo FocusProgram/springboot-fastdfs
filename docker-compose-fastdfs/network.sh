@@ -13,7 +13,7 @@ docker network ls
 
 # 创建自定义网络
 
-docker network create --driver=bridge --subnet=172.17.0.0/16 mynetwork
+docker network create --driver=bridge --subnet=172.18.0.0/16 mynetwork
 
 # 创建doker容器
 
@@ -24,4 +24,4 @@ docker run --name nginx -d \
 -v /data/nginx/conf/nginx.conf:/etc/nginx/nginx.conf \
 -v /data/nginx/conf.d/:/etc/nginx/conf.d \
 -v /data/nginx/logs/:/var/log/nginx/
---net mynetwork --ip 172.17.0.1 nginx
+--net mynetwork --ip 172.18.0.2 nginx

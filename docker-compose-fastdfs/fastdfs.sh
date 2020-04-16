@@ -11,6 +11,6 @@ then
         ./delete_image.sh
 fi
 
-./build.sh fastdfs
+./build.sh springboot-fastdfs
 
 docker-compose -f fastdfs.yml up -d

@@ -8,7 +8,11 @@ services:
             - 8000:8000
         networks:
           default:
-             ipv4_address: 172.18.0.2
+             ipv4_address: 172.18.0.3
+        #  配配自定义网络
+        #network:
+        #  mynetwork:
+        #    ipv4_address: 172.18.0.3
         #network_mode: bridge  # 连接外部容器
         #env_file: ./common.env
         #extends:
@@ -20,6 +24,7 @@ networks:
     external:
       name: mynetwork
 
+# 创建自定义网络
 #networks:
 #  mynetwork:
 #    ipam:

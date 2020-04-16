@@ -16,20 +16,20 @@ fi
 
 workDir=/data/springboot-fastdfs;
 
-echo "----------cd "$workDir ----------;
+echo "----------cd "$workDir ----------
 
 cd $workDir;
 
-git reset --hard && git pull;
+git reset --hard && git pull
 
 cd $workDir/docker-compose-fastdfs
 
 chmod +x chown.sh && ./chown.sh && cd $workDir
 
-cp $workDir/src/main/docker/{Dockerfile,entrypoint.sh,.dockerignore} . ;
+cp $workDir/src/main/docker/{Dockerfile,entrypoint.sh,.dockerignore} .
 
 mvn clean install dockerfile:build;
 
-rm -rf Dockerfile entrypoint.sh .dockerignore;
+rm -rf Dockerfile entrypoint.sh .dockerignore
 
-echo "---------- dockerfile:build success -------------";
+echo "---------- dockerfile:build success -------------"

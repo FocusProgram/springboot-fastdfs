@@ -22,7 +22,7 @@ cd $workDir;
 
 git reset --hard && git pull;
 
-cd @workDir/docker-compose-fastdfs
+cd $workDir/docker-compose-fastdfs
 
 chmod +x chown.sh && ./chown.sh && cd $workDir
 

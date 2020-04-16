@@ -22,7 +22,7 @@ cd $workDir;
 
 git reset --hard && git pull;
 
-chmod +x chmod.sh && ./chmod.sh
+chmod +x chmod.sh && ./chown.sh
 
 cp $workDir/src/main/docker/{Dockerfile,entrypoint.sh,.dockerignore} . ;
 

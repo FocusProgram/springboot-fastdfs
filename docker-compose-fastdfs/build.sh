@@ -20,9 +20,7 @@ echo "----------cd "$workDir ----------;
 
 cd $workDir;
 
-git reset --hard;
-
-git pull;
+git reset --hard && git pull;
 
 chmod +x chmod.sh && ./chmod.sh
 

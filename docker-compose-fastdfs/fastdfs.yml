@@ -7,7 +7,7 @@ services:
         ports:
             - 8000:8000
         networks:
-          mynetwork:
+          default:
              ipv4_address: 172.18.0.2
         #network_mode: bridge  # 连接外部容器
         #env_file: ./common.env

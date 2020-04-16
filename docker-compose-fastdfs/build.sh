@@ -22,7 +22,9 @@ cd $workDir;
 
 git reset --hard && git pull;
 
-chmod +x chown.sh && ./chown.sh
+cd @workDir/docker-compose-fastdfs
+
+chmod +x chown.sh && ./chown.sh && cd $workDir
 
 cp $workDir/src/main/docker/{Dockerfile,entrypoint.sh,.dockerignore} . ;
 

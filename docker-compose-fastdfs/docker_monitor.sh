@@ -1,8 +1,8 @@
 #!/bin/bash
-#监控容器的运行状态
 
 #容器名称  传入参数
 containerName=$1
+
 #当前时间
 now=`date +"%Y-%m-%d %H:%M:%S"`
 

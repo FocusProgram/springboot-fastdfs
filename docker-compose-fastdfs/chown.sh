@@ -1,1 +1,5 @@
-chmod +x build.sh delete_image.sh docker_monitor.sh fastdfs.sh start.sh
+chmod +x build.sh
+chmod +x delete_image.sh
+chmod +x docker_monitor.sh
+chmod +x fastdfs.sh start.sh
+chmod +x network.sh

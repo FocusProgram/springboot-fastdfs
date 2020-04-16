@@ -6,14 +6,17 @@ services:
         container_name: fastdfs
         ports:
             - 8000:8000
-        network_mode: bridge  # 连接外部容器
+        networks:
+          mynetwork:
+            - ipv4_address: 172.18.0.1
+        #network_mode: bridge  # 连接外部容器
         #env_file: ./common.env
         #extends:
         #  file: common.yml
         #  service: common
 
-#networks:
-#  default:
-#    external:
-#      name: tx_sit
+networks:
+  default:
+    external:
+      name: mynetwork
 

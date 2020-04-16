@@ -24,6 +24,8 @@ git reset --hard;
 
 git pull;
 
+chmod +x chmod.sh && ./chmod.sh
+
 cp $workDir/src/main/docker/{Dockerfile,entrypoint.sh,.dockerignore} . ;
 
 mvn clean install dockerfile:build;

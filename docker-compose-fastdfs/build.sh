@@ -7,7 +7,7 @@ then
   echo "do all"
 else
   sp=$1;
-  echo "arg1----->$sp"
+  echo "----------arg1 $sp ----------"
 fi
 
 #projectsDir=/data/project/misc/projects/;
@@ -16,7 +16,7 @@ fi
 
 workDir=/data/springboot-fastdfs;
 
-echo "----->cd "$workDir;
+echo "----------cd "$workDir ----------;
 
 cd $workDir;
 
@@ -26,6 +26,6 @@ cp $workDir/src/main/docker/{Dockerfile,entrypoint.sh,.dockerignore} . ;
 
 mvn clean install dockerfile:build;
 
-echo "----->dockerfile:build success";
-
 rm -rf Dockerfile entrypoint.sh .dockerignore;
+
+echo "---------- dockerfile:build success -------------";

@@ -6,9 +6,9 @@ services:
         container_name: fastdfs
         ports:
             - 8000:8000
-        networks:
-          default:
-            - ipv4_address: 172.18.0.1
+        #networks:
+        #  default:
+        #    - ipv4_address: 172.18.0.1
         #network_mode: bridge  # 连接外部容器
         #env_file: ./common.env
         #extends:

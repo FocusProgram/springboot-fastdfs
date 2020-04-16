@@ -20,6 +20,8 @@ echo "----------cd "$workDir ----------;
 
 cd $workDir;
 
+git reset --hard;
+
 git pull;
 
 cp $workDir/src/main/docker/{Dockerfile,entrypoint.sh,.dockerignore} . ;

@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 /**
  * @Auther: Mr.Kong
@@ -32,6 +33,10 @@ import java.util.Map;
 @RestController
 @RequestMapping(value = "fastdfs")
 public class UploadController {
+
+    public static void main(String[] args) {
+        System.out.println(UUID.randomUUID().toString());
+    }
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 

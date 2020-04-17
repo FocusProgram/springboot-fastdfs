@@ -184,7 +184,7 @@
                     <!-- 上下文路径配置，此处设置为项目根路径 用来读取Dockerfile-->
                     <contextDirectory>${project.basedir}</contextDirectory>
                     <!-- 标记 -->
-<!--                    <tag>${project.version}</tag>-->
+                    <!--                    <tag>${project.version}</tag>-->
                     <!--作为Dockerfile文件参数传入-->
                     <buildArgs>
                         <ARTIFACT>target/${project.build.finalName}.${project.packaging}</ARTIFACT>
